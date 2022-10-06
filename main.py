@@ -68,8 +68,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def new_record_comp(self):
        
         fulldataset=(
-            self.txt_cnpj.text(),self.txt_dtabertura.text(),self.txt_porte.text(),self.txt_nomempresa.text(),self.txt_situacao.text(),self.txt_logradouro.text(),
-            self.txt_numeroemp.text(),self.txt_complemento.text(),self.txt_municipio.text(),self.txt_estado.text(),self.txt_tipo_cadastro.currentText(),
+            self.txt_cnpj.text(),self.txt_dtabertura.text(),self.txt_nomempresa.text(),self.txt_situacao.text(),self.txt_logradouro.text(),self.txt_numeroemp.text(),
+            self.txt_complemento.text(),self.txt_municipio.text(),self.txt_estado.text(),self.txt_porte.text(),self.txt_tipo_cadastro.currentText(),
             datetime.datetime.now().strftime('%m-%d-%Y %H:%M'),"userr"
         )
 
@@ -85,8 +85,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         connect= sql_query.con_creator()
         
         sql_query.execute_querys("INSERT", query, connect)
-        sql_query.connection.close()
-
+        
+        sql_query.close_conection(connect)
 
 
 if __name__ == "__main__":

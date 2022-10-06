@@ -18,6 +18,14 @@ def con_creator():
         pass
     return connection
 
+def close_conection(conection):
+    try:
+        conection.close
+        print("fechou!")
+    except:
+        print("ERROU!")
+        pass
+
 # Executa querys
 def execute_querys(query_type, query, connection):
     # Cria cursor interador para manipuçar o db
