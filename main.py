@@ -73,8 +73,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             datetime.datetime.now().strftime('%m-%d-%Y %H:%M'),"userr"
         )
 
-        campos = ('cnpj', 'abertura', 'nome', 'situacao', 'logradouro', 'numero', 'complemento', 'municipio', 'uf', 'porte', 'tipo_cadastro', 'registro_db', 'user')
-        qtd= ("?,?,?,?,?,?,?,?,?,?,?,?,?")        
+        campos = ('cnpj', 'abertura', 'nome', 'situacao', 'logradouro', 'numero', 'complemento', 'municipio', 'uf', 'porte', 'tipo_cadastro', 'registro_db', 'user')     
         query = (f"INSERT INTO empresas {campos} VALUES {fulldataset};")
 
         query = str(query)
