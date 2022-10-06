@@ -32,17 +32,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         #############################################################################################
         #Botões
-        self.btn_cadastraremp.clicked.connect(self.new_record_comp
-        self.txt_cnpj.editingFinished.connect(self.consulta_api)
-
-<<<<<<< HEAD
-        #Botões
         self.btn_cadastraremp.clicked.connect(self.new_record_comp)
-=======
-       
         self.txt_cnpj.editingFinished.connect(self.consulta_api)
-
->>>>>>> 1a3e7cbec6f05b9ee9508e393a1a81660a6d5b77
         ###########################################################
 
         ############################################################
@@ -74,29 +65,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.txt_municipio.setText(campos_cadastro[7])
         self.txt_estado.setText(campos_cadastro[8])
         
-        
-               
-        
-
     def new_record_comp(self):
-        fuldataset=(
+       
+        fulldataset=(
             self.txt_cnpj.text(),self.txt_dtabertura.text(),self.txt_porte.text(),self.txt_nomempresa.text(),self.txt_situacao.text(),self.txt_logradouro.text(),
-            self.txt_numeroemp.text(),self.txt_complemento.text(),self.txt_municipio.text(),self.txt_estado.text(),self.txt_tipo_cadastro.text(),
-            datetime.now().strtime('%m-%d-%Y %H:%M'),self.txt_userread.text()
+            self.txt_numeroemp.text(),self.txt_complemento.text(),self.txt_municipio.text(),self.txt_estado.text(),self.txt_tipo_cadastro.currentText(),
+            datetime.datetime.now().strftime('%m-%d-%Y %H:%M'),"userr"
         )
 
-        query = (f"""INSERT INTO empresas(
-        cnpj, abertura, 
-        nome, situacao, 
-        logradouro, numero, 
-        complemento, municipio, 
-        uf, porte, 
-        tipo_cadastro, registro_db, 
-        user) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?),
-        {fuldataset}""")
+        qtd= ("?,?,?,?,?,?,?,?,?,?,?,?,?")
+        campos = ("cnpj, abertura, nome, situacao, logradouro, numero, complemento, municipio, uf, porte, tipo_cadastro, registro_db, user")
+        query = (f"""INSERT INTO empresas {campos} VALUES ({qtd})""", fulldataset)
 
-        sql_query.execute_querys("INSERT", query, sql_query.con_creator())
-        sql_query.connection.close
+        query = str(query)
+        print(query)
+
+        print(type(query))
+
+        connect= sql_query.con_creator()
+        
+        sql_query.execute_querys("INSERT", query, connect)
+        sql_query.connection.close()
 
 
 

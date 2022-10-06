@@ -6,10 +6,12 @@ from unittest import result
 # Realizar conexão no banco de dados
 def con_creator():
     # Desabilita qualquer conexão criada
+    print("entrou")
     connection = None
     # Tenta conectar com banco de dados receive_pay_registration
     try:
         connection = sqlite3.connect("receive_pay_registration.db")
+        print("\n Ação realizada com sucesso! \n")
     # Caso não consiga conectar devolve o erro ao conectar
     except Error as err:
         print(f"Não foi possível conectar no banco de dasdos receive_pay_registration, erro:\n {err}")
