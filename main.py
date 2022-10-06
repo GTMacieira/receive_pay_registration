@@ -75,10 +75,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         campos = ('cnpj', 'abertura', 'nome', 'situacao', 'logradouro', 'numero', 'complemento', 'municipio', 'uf', 'porte', 'tipo_cadastro', 'registro_db', 'user')
         qtd= ("?,?,?,?,?,?,?,?,?,?,?,?,?")        
-        query = (f"INSERT INTO empresas {campos} VALUES ({qtd})", fulldataset)
+        query = (f"INSERT INTO empresas {campos} VALUES {fulldataset};")
 
         query = str(query)
-        print(query)
+        print(f"INSERT INTO empresas {campos} VALUES {fulldataset}")
 
         print(type(query))
 
