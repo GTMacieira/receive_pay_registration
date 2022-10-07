@@ -20,7 +20,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(8, 42, 77);</string>
+   <string notr="true">background-color: rgb(47, 79, 79);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -98,7 +98,7 @@ QLabel{
         <widget class="QFrame" name="frame_2">
          <property name="styleSheet">
           <string notr="true">QFrame {
-	background-color: rgb(77, 134, 191);
+	background-color: rgb(69, 116, 116);
 	border-radius: 5px;
 	border-right: 1px solid rgb(255,255,255);
 	
@@ -106,7 +106,7 @@ QLabel{
 
 QToolBox::tab{
 	border-radius: 5px;
-	background-color: rgb(108, 190, 217);
+	background-color: rgb(47, 79, 79);
 	text-align:left;
 }</string>
          </property>
@@ -121,8 +121,8 @@ QToolBox::tab{
            <widget class="QToolBox" name="toolBox">
             <property name="styleSheet">
              <string notr="true">QFrame{
-	border:1px solid rgb(77, 134, 191);
-border-radius:5px;
+	border:1px solid rgb(47, 79, 79);
+	border-radius:5px;
 }
 QPushButton:hover{
 	background-color:#4d86bf;
@@ -269,7 +269,7 @@ QPushButton{
                <x>0</x>
                <y>0</y>
                <width>16</width>
-               <height>510</height>
+               <height>527</height>
               </rect>
              </property>
              <attribute name="label">
@@ -393,7 +393,7 @@ QPushButton{
           <item>
            <widget class="QStackedWidget" name="Pages">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="pg_home">
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -425,9 +425,9 @@ QPushButton{
                    <colorrole role="Button">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
@@ -452,18 +452,18 @@ QPushButton{
                    <colorrole role="Base">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
                    <colorrole role="Window">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
@@ -481,9 +481,9 @@ QPushButton{
                    <colorrole role="Button">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
@@ -508,18 +508,18 @@ QPushButton{
                    <colorrole role="Base">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
                    <colorrole role="Window">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
@@ -537,9 +537,9 @@ QPushButton{
                    <colorrole role="Button">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
@@ -564,18 +564,18 @@ QPushButton{
                    <colorrole role="Base">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
                    <colorrole role="Window">
                     <brush brushstyle="SolidPattern">
                      <color alpha="255">
-                      <red>8</red>
-                      <green>42</green>
-                      <blue>77</blue>
+                      <red>47</red>
+                      <green>79</green>
+                      <blue>79</blue>
                      </color>
                     </brush>
                    </colorrole>
@@ -586,7 +586,7 @@ QPushButton{
                  <enum>Qt::DefaultContextMenu</enum>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">color: rgb(255, 255, 255);</string>
+                 <string notr="true"/>
                 </property>
                 <property name="tabPosition">
                  <enum>QTabWidget::North</enum>
@@ -595,7 +595,7 @@ QPushButton{
                  <enum>QTabWidget::Rounded</enum>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
                 <property name="elideMode">
                  <enum>Qt::ElideNone</enum>
@@ -633,8 +633,10 @@ QPushButton{
 }
 
 QFrame{
-	background-color: rgb(108, 190, 217);
+	
+	
 	border-radius:5px;
+	background-color: rgb(200, 180, 163);
 
 }
 QLineEdit{
@@ -715,7 +717,7 @@ QLineEdit{
                      <item row="0" column="0" colspan="3">
                       <widget class="QLabel" name="lbs_cadastro">
                        <property name="styleSheet">
-                        <string notr="true">background-color: #082a4d;</string>
+                        <string notr="true">background-color: rgba(47, 79, 79, 0.80);</string>
                        </property>
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#ffffff;&quot;&gt;Cadastro de Empresas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -1123,7 +1125,7 @@ QPushButton{
                      <widget class="QTableWidget" name="tableWidget">
                       <property name="styleSheet">
                        <string notr="true">QHeaderView::section{
-background-color:rgb(148,148,148);
+	background-color:rgb(148,148,148);
 	color:rgb(255,255,255);
 	font: 10pt &quot;MS Shell dlg2&quot;;
 }
@@ -1134,6 +1136,11 @@ QTableWidget{
 
 }</string>
                       </property>
+                      <column>
+                       <property name="text">
+                        <string>Id</string>
+                       </property>
+                      </column>
                       <column>
                        <property name="text">
                         <string>CNPJ</string>
@@ -1314,19 +1321,11 @@ QPushButton:hover{
             <widget class="QWidget" name="pg_cadastro">
              <layout class="QVBoxLayout" name="verticalLayout_12">
               <item>
-               <widget class="QLabel" name="label_11">
-                <property name="font">
-                 <font>
-                  <pointsize>8</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;Tela de Cadastro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-               </widget>
-              </item>
-              <item>
                <widget class="QLabel" name="label_6">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(69, 116, 116);
+border-radius: 5px;</string>
+                </property>
                 <property name="text">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;CADASTRAR USUÁRIO&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
@@ -1352,11 +1351,10 @@ QPushButton:hover{
                   <property name="styleSheet">
                    <string notr="true">color:rgba(211, 239, 251,1);
 border-bottom:1px solid white;
-border-radius: None;
-background-color:rgba(85, 115, 155,0.1);
+border-radius: 5px;
 font-family:Trebuchet MS; 
 font-size:18px;
-background-color: rgb(0, 80, 121);</string>
+background-color: rgb(69, 116, 116);</string>
                   </property>
                  </widget>
                 </item>
@@ -1392,7 +1390,8 @@ background-color: rgb(0, 80, 121);</string>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0, 80, 121);</string>
+background-color: rgb(69, 116, 116);
+border-radius: 5px;</string>
                   </property>
                   <item>
                    <property name="text">

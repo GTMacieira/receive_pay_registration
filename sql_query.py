@@ -6,24 +6,21 @@ from unittest import result
 # Realizar conexão no banco de dados
 def con_creator():
     # Desabilita qualquer conexão criada
-    print("entrou")
     connection = None
     # Tenta conectar com banco de dados receive_pay_registration
     try:
         connection = sqlite3.connect("receive_pay_registration.db")
-        print("\n Ação realizada com sucesso! \n")
     # Caso não consiga conectar devolve o erro ao conectar
     except Error as err:
-        print(f"Não foi possível conectar no banco de dasdos receive_pay_registration, erro:\n {err}")
         pass
     return connection
 
 def close_conection(conection):
     try:
         conection.close
-        print("fechou!")
+
     except:
-        print("ERROU!")
+
         pass
 
 # Executa querys
@@ -37,7 +34,6 @@ def execute_querys(query_type, query, connection):
             try: 
                 # Realiza alteração no banco
                 connection.commit()
-                print("\n Ação realizada com sucesso! \n")
             except Error as err:
                 print(f"Não foi possível realizar a ação, erro:\n {err}")
         elif query_type == "READ":
@@ -51,6 +47,16 @@ def execute_querys(query_type, query, connection):
     # Finaliza cursor
     cursor.close()
 
+def select_all_empresas(connection):
+    try:
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM empresas ORDER BY id")
+        empresas = cursor.fetchall()
+        return empresas
+    except:
+        pass
+    
+    
 if __name__ == "__main__":
     connection = con_creator()
     execute_querys(

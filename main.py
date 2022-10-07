@@ -35,8 +35,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_cadastraremp.clicked.connect(self.new_record_comp)
         self.txt_cnpj.editingFinished.connect(self.consulta_api)
         ###########################################################
-
+        self.buscar_dados()
         ############################################################
+        
     def leftContainer(self):
         width = self.left_container.width()
 
@@ -76,17 +77,28 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         campos = ('cnpj', 'abertura', 'nome', 'situacao', 'logradouro', 'numero', 'complemento', 'municipio', 'uf', 'porte', 'tipo_cadastro', 'registro_db', 'user')     
         query = (f"INSERT INTO empresas {campos} VALUES {fulldataset};")
 
-        query = str(query)
-        print(f"INSERT INTO empresas {campos} VALUES {fulldataset}")
-
-        print(type(query))
-
-        connect= sql_query.con_creator()
+        connect = sql_query.con_creator()
         
         sql_query.execute_querys("INSERT", query, connect)
         
         sql_query.close_conection(connect)
 
+    def buscar_dados(self):
+        
+        connect = sql_query.con_creator()
+       
+        resultado = sql_query.select_all_empresas(connect)
+        
+        self.tableWidget.clearContents()
+        self.tableWidget.setRowCount(len(resultado))
+
+        for row, text in enumerate(resultado):
+            for column, data, in enumerate(text):
+                self.tableWidget.setItem(row, column, QTableWidgetItem(str(data)))
+
+        sql_query.close_conection(connect)
+        
+        
 
 if __name__ == "__main__":
     
