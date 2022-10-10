@@ -3,6 +3,13 @@ import sqlite3
 from sqlite3 import Error
 from unittest import result
 
+class data_base():
+    def __init__(self):
+        self.connection_db = None
+        
+
+    
+
 # Realizar conexão no banco de dados
 def con_creator():
     # Desabilita qualquer conexão criada

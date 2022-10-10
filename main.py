@@ -83,6 +83,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         sql_query.close_conection(connect)
 
+        
+
     def buscar_dados(self):
         
         connect = sql_query.con_creator()
