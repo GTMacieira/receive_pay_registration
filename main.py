@@ -2,12 +2,13 @@ from PySide6 import QtCore
 from PySide6.QtCore import QCoreApplication
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTableWidgetItem, QWidget)
+from matplotlib.pyplot import connect
 from ui_main import Ui_MainWindow
 from api_consultarcnpj import *
 import sys
 import pandas as pd
 import datetime
-import sql_query
+from sql_query import data_base
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -67,7 +68,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.txt_estado.setText(campos_cadastro[8])
         
     def new_record_comp(self):
-       
+        connect = data_base()
+
         fulldataset=(
             self.txt_cnpj.text(),self.txt_dtabertura.text(),self.txt_nomempresa.text(),self.txt_situacao.text(),self.txt_logradouro.text(),self.txt_numeroemp.text(),
             self.txt_complemento.text(),self.txt_municipio.text(),self.txt_estado.text(),self.txt_porte.text(),self.txt_tipo_cadastro.currentText(),
@@ -77,17 +79,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         campos = ('cnpj', 'abertura', 'nome', 'situacao', 'logradouro', 'numero', 'complemento', 'municipio', 'uf', 'porte', 'tipo_cadastro', 'registro_db', 'user')     
         query = (f"INSERT INTO empresas {campos} VALUES {fulldataset};")
 
-        connect = sql_query.con_creator()
+
+        connect.executa_DML(query)    
         
-        sql_query.execute_querys("INSERT", query, connect)
-        
-        sql_query.close_conection(connect)
 
     def buscar_dados(self):
-        
-        connect = sql_query.con_creator()
-       
-        resultado = sql_query.select_all_empresas(connect)
+        connect=data_base()
+        resultado = connect.executa_DQL("SELECT * FROM empresas")
         
         self.tableWidget.clearContents()
         self.tableWidget.setRowCount(len(resultado))
@@ -96,7 +94,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             for column, data, in enumerate(text):
                 self.tableWidget.setItem(row, column, QTableWidgetItem(str(data)))
 
-        sql_query.close_conection(connect)
+        
         
         
 
