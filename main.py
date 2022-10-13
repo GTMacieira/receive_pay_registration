@@ -77,11 +77,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         )
 
         campos = ('cnpj', 'abertura', 'nome', 'situacao', 'logradouro', 'numero', 'complemento', 'municipio', 'uf', 'porte', 'tipo_cadastro', 'registro_db', 'user')     
-        query = (f"INSERT INTO empresas {campos} VALUES {fulldataset};")
+        query = (
+            f"""INSERT INTO empresas {campos}
+            VALUES {fulldataset};"""
+        )
 
 
         connect.executa_DML(query)    
         
+    def update_data(self):
+        connect = data_base()
+        query = (
+            f"""UPDATE empresas
+            SET {coluna} = {valor}
+            WHERE {id_number}"""
+            )
 
     def buscar_dados(self):
         connect=data_base()
