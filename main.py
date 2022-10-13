@@ -81,6 +81,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
         connect.executa_DML(query)    
+
+    def update_data(self):
+        connect =data_base()
+
+
+        query = (f"UPDATE empresas SET {coluna} = {valor} WHERE {id_number}")
+
+        connect.executa_DML(query)
         
 
     def buscar_dados(self):
