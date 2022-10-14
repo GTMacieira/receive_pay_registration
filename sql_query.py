@@ -32,8 +32,9 @@ class data_base():
 if __name__ == "__main__":
     connection = data_base()
     connection.conecta()
-    ret= connection.executa_DQL("SELECT * FROM empresas")
-    print(ret)
+    
+    
+    
     # execute_querys(
     #     "CREATE",
     #     """CREATE TABLE IF NOT EXISTS users(
@@ -41,8 +42,7 @@ if __name__ == "__main__":
     #         user TEXT NOT NULL, password TEXT NOT NULL, 
     #         access NOT NULL, registro_db TIMEVALUE NOT NULL);""",
     #         connection)
-    # execute_querys(
-    #     "CREATE",
+    # connection.executa_DML(
     #     """CREATE TABLE IF NOT EXISTS empresas(
     #         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
     #         cnpj TEXT NOT NULL,  
@@ -57,8 +57,8 @@ if __name__ == "__main__":
     #         porte TEXT NOT NULL, 
     #         tipo_cadastro TEXT NOT NULL,
     #         registro_db TIMEVALUE NOT NULL, 
-    #         user TEXT NOT NULL);""",
-    #         connection)
+    #         user TEXT NOT NULL);"""
+    #         )
     # execute_querys("CREATE",
     #     """CREATE TABLE IF NOT EXISTS recebimentos(
     #         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
